@@ -2,7 +2,7 @@
     "id": "60ad0e5f-348b-473b-ae69-ce94ad305de8",
     "modelName": "GMRoom",
     "mvc": "1.0",
-    "name": "rm_init",
+    "name": "atarashi_init",
     "IsDnD": false,
     "creationCodeFile": "",
     "inheritCode": false,
@@ -44,8 +44,8 @@
                     "m_originalParentID": "00000000-0000-0000-0000-000000000000",
                     "m_serialiseFrozen": false,
                     "name": "inst_20B3A813",
-                    "x": 32,
-                    "y": 32,
+                    "x": 0,
+                    "y": 0,
                     "IsDnD": false,
                     "colour": {
                         "Value": 4294967295
