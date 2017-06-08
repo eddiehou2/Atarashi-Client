@@ -11,7 +11,6 @@ switch (command) {
 	case "LOGIN":
 		status = buffer_read(argument0, buffer_string);
 		if (status == "TRUE") {
-			//["LOGIN", "TRUE", client.user.current_room, client.user.pox_x, client.user.pox_y, client.user.username]
 			target_room = buffer_read(argument0, buffer_string);
 			target_x = buffer_read(argument0, buffer_u16);
 			target_y = buffer_read(argument0, buffer_u16);
@@ -21,6 +20,9 @@ switch (command) {
 			room_goto(goto_room);
 			
 			// Initiate a player object in this room
+			with(instance_create_layer(target_x, target_y, "Instances", obj_Player)) {
+				name = other.name;
+			};
 		}
 		else {
 			show_message("Login Failed: User doesn't exist or password didn't match");
