@@ -1,0 +1,1 @@
+scr_itemPickUp(int64(random_range(0,3)));
