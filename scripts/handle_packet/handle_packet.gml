@@ -15,13 +15,25 @@ switch (command) {
 			target_x = buffer_read(argument0, buffer_u16);
 			target_y = buffer_read(argument0, buffer_u16);
 			name = buffer_read(argument0, buffer_string);
+			smax_hp = buffer_read(argument0, buffer_u16);
+			scur_hp = buffer_read(argument0, buffer_u16);
+			smax_mp = buffer_read(argument0, buffer_u16);
+			scur_mp = buffer_read(argument0, buffer_u16);
+			slevel = buffer_read(argument0, buffer_u16);
+			sexperience = buffer_read(argument0, buffer_u16);
+			
 			
 			goto_room = asset_get_index(target_room);
 			room_goto(goto_room);
-			
 			// Initiate a player object in this room
-			with(instance_create_layer(target_x, target_y, "Instances", obj_Player)) {
+			with(instance_create_depth(target_x, target_y, -100, obj_Player)) {
 				name = other.name;
+				max_hp = other.smax_hp;
+				cur_hp = other.scur_hp;
+				max_mp = other.smax_mp;
+				cur_mp = other.scur_mp;
+				level = other.slevel;
+				experience = other.sexperience;
 			};
 		}
 		else {

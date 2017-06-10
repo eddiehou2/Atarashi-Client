@@ -19,21 +19,7 @@ if (abs(mouse_x - x) < 16 && abs(mouse_y - y) < 16) {
 	}
 	
 	if (use) {
-		if (item == 1) {
-			global.cur_hp += 20;
-			if (global.cur_hp > global.max_hp) {
-				global.cur_hp = global.max_hp;
-			}
-			scr_itemDrop_Slot(slot);
-		}
-		if (item == 2) {
-			global.cur_mp += 20;
-			if (global.cur_mp > global.max_mp) {
-				global.cur_mp = global.max_mp;
-			}
-			scr_itemDrop_Slot(slot);
-		}
-		show_debug_message("PRESSED " + string(item));
+		scr_useItem(slot);
 	}
 }
 

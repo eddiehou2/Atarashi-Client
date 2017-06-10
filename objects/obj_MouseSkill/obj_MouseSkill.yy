@@ -1,19 +1,10 @@
 {
-    "id": "5916785b-4aa5-4da9-8eba-9d9d3fe71e7a",
+    "id": "ce1499c4-5301-4138-be69-82c625be495a",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_MP",
+    "name": "obj_MouseSkill",
     "eventList": [
-        {
-            "id": "34cd300d-f462-4592-9910-99f3a219d968",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 8,
-            "m_owner": "5916785b-4aa5-4da9-8eba-9d9d3fe71e7a"
-        }
+        
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "parentObjectId": "00000000-0000-0000-0000-000000000000",
