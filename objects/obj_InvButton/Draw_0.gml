@@ -1,4 +1,4 @@
-var item = global.inventory[slot];
+var itemObj = global.inventory[slot];
 var click = mouse_check_button_pressed(mb_left);
 var use = mouse_check_button_pressed(mb_right);
 
@@ -9,13 +9,13 @@ if (abs(mouse_x - x) < 16 && abs(mouse_y - y) < 16) {
 	draw_set_alpha(1);
 	
 	if (click) {
-		if (item != -1) {
-			scr_itemDrop_Slot(slot);
+		if (itemObj.itemId != -1) {
+			scr_itemDrop_Slot(slot, itemObj.quantity);
 		}
-		if (mouseItem != -1) {
-			scr_itemPickUp_Slot(mouseItem, slot);
+		if (mouseItem.itemId != -1) {
+			scr_itemPickUp_Slot(mouseItem.itemId, mouseItem.quantity, slot);
 		}
-		mouseItem = item;
+		mouseItem = itemObj;
 	}
 	
 	if (use) {
@@ -23,6 +23,8 @@ if (abs(mouse_x - x) < 16 && abs(mouse_y - y) < 16) {
 	}
 }
 
-if (item != -1) {
-	draw_sprite(spr_items, item, x, y);
+if (itemObj.itemId != -1) {
+	draw_sprite(spr_items, itemObj.itemId, x, y);
+	draw_set_color(c_orange);
+	draw_text(x-3, y-3, string(itemObj.quantity));
 }

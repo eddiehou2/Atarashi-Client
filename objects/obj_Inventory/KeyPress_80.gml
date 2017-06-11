@@ -1,1 +1,1 @@
-scr_itemPickUp(int64(random_range(0,3)));
+scr_itemPickUp(int64(random_range(0,3)), 1);

@@ -1,3 +1,9 @@
-moving = false;
-target_x = x;
-target_y = y;
+self.moving = false;
+self.target_x = x;
+self.target_y = y;
+self.max_hp = 100;
+self.cur_hp = 100;
+self.max_mp = 100;
+self.cur_mp = 100;
+self.level = 0;
+self.hostile = false;

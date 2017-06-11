@@ -1,6 +1,6 @@
-var item = mouseItem;
-if (item != -1) {
+var itemObj = mouseItem;
+if (itemObj.itemId != -1) {
 	x = mouse_x;
 	y = mouse_y;
-	draw_sprite(spr_items, item, x, y);
+	draw_sprite(spr_items, itemObj.itemId, x, y);
 }

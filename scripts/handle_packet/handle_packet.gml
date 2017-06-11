@@ -73,5 +73,61 @@ switch (command) {
 			}
 		}
 		break;
+	case "STAT":
+		status = buffer_read(argument0, buffer_string);
+		statName = buffer_read(argument0, buffer_string);
+		if (status == "TRUE") {
+			show_debug_message("Stat Change Success: " + string(statName) + " has been updated.");
+		}
+		else {
+			show_message("Stat Change Failed: Your " + string(statName) + " has failed to update due to invalid statValue or server issues.");
+		}
+		break;
+	case "IATTACK":
+		status = buffer_read(argument0, buffer_string);
+		if (status == "TRUE") {
+			username = buffer_read(argument0, buffer_string);
+			damage = buffer_read(argument0, buffer_u16);
+			current_hp = buffer_read(argument0, buffer_u16);
+			maximum_hp = buffer_read(argument0, buffer_u16);
+			with(obj_Network_Player) {
+				if (name == other.username) {
+					self.cur_hp = other.current_hp;
+					self.max_hp = other.maximum_hp;
+					hostile = true;
+				}
+			}
+		}
+		else {
+			show_debug_message("Attack failed: did not hit anything");
+		}
+		break;
+	case "UATTACK":
+		username = buffer_read(argument0, buffer_string);
+		damage = buffer_read(argument0, buffer_u16);
+		global.cur_hp = buffer_read(argument0, buffer_u16);
+		current_hp = buffer_read(argument0, buffer_u16);
+		maximum_hp = buffer_read(argument0, buffer_u16);
+		with(obj_Network_Player) {
+			if (name == other.username) {
+				self.cur_hp = other.current_hp;
+				self.max_hp = other.maximum_hp;
+				hostile = true;
+			}
+		}
+		break;
+	case "IDIE":
+		show_message("You are dead!");
+		break;
+	case "UDIE":
+		username = buffer_read(argument0, buffer_string);
+		killedBy = buffer_read(argument0, buffer_string);
+		with (obj_Network_Player) {
+			if (name == other.username) {
+				show_debug_message(string(name) + " has been killed by " + string(other.killedBy));
+				instance_destroy();
+			}
+		}
+		break;
 		
 }

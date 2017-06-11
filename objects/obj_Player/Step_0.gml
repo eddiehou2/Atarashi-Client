@@ -1,21 +1,27 @@
 // x movement
-if (target_x > x) {
-	x += 4
-	sprite_index = spr_Hero_Right;
-}
-if (target_x < x) {
-	x -= 4
-	sprite_index = spr_Hero_Left;
-}
+if (!attack) {
+	if (target_x > x) {
+		x += 4
+		sprite_index = spr_Hero_Right;
+		facingDirection = "right";
+	}
+	if (target_x < x) {
+		x -= 4
+		sprite_index = spr_Hero_Left;
+		facingDirection = "left";
+	}
 
-// y movement
-if (target_y > y) {
-	y += 4
-	sprite_index = spr_Hero_Down;
-}
-if (target_y < y) {
-	y -= 4
-	sprite_index = spr_Hero_Up;
+	// y movement
+	if (target_y > y) {
+		y += 4
+		sprite_index = spr_Hero_Down;
+		facingDirection = "down";
+	}
+	if (target_y < y) {
+		y -= 4
+		sprite_index = spr_Hero_Up;
+		facingDirection = "up";
+	}
 }
 
 // No longer moving
@@ -45,3 +51,14 @@ if (keyboard_check(vk_down) && !moving && place_free(x, y + (y_move_radius+1))) 
 	moving = true;
 	event_user(0);
 } 
+
+// Attack 
+if (keyboard_check_pressed(vk_space) && !attack) {
+	with(instance_create_depth(x, y, -100, obj_PlayerAttack)) {
+		facingDirection = other.facingDirection
+		name = other.name;
+		show_debug_message("exists");
+	}
+	attack = true;
+	visible = false;
+}

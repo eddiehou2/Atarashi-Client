@@ -1,0 +1,2 @@
+itemId = -1;
+quantity = -1;
