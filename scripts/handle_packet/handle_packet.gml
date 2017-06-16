@@ -9,36 +9,9 @@ switch (command) {
 		show_debug_message("Server welcomes you @ " + server_time);
 		break;
 	case "LOGIN":
-		status = buffer_read(argument0, buffer_string);
-		if (status == "TRUE") {
-			target_room = buffer_read(argument0, buffer_string);
-			target_x = buffer_read(argument0, buffer_u16);
-			target_y = buffer_read(argument0, buffer_u16);
-			name = buffer_read(argument0, buffer_string);
-			smax_hp = buffer_read(argument0, buffer_u16);
-			scur_hp = buffer_read(argument0, buffer_u16);
-			smax_mp = buffer_read(argument0, buffer_u16);
-			scur_mp = buffer_read(argument0, buffer_u16);
-			slevel = buffer_read(argument0, buffer_u16);
-			sexperience = buffer_read(argument0, buffer_u16);
-			
-			
-			goto_room = asset_get_index(target_room);
-			room_goto(goto_room);
-			// Initiate a player object in this room
-			with(instance_create_depth(target_x, target_y, -100, obj_Player)) {
-				name = other.name;
-				max_hp = other.smax_hp;
-				cur_hp = other.scur_hp;
-				max_mp = other.smax_mp;
-				cur_mp = other.scur_mp;
-				level = other.slevel;
-				experience = other.sexperience;
-			};
-		}
-		else {
-			show_message("Login Failed: User doesn't exist or password didn't match");
-		}
+		window_set_size(1600, 900);
+		window_set_position(100,100);
+		scr_playerObjCreate(argument0, "LOGIN");
 		break;
 	case "REGISTER":
 		status = buffer_read(argument0, buffer_string);
@@ -94,7 +67,8 @@ switch (command) {
 				if (name == other.username) {
 					self.cur_hp = other.current_hp;
 					self.max_hp = other.maximum_hp;
-					hostile = true;
+					self.hostile = true;
+					self.alarm[0] = room_speed * 20;
 				}
 			}
 		}
@@ -112,12 +86,13 @@ switch (command) {
 			if (name == other.username) {
 				self.cur_hp = other.current_hp;
 				self.max_hp = other.maximum_hp;
-				hostile = true;
+				self.hostile = true;
+				self.alarm[0] = room_speed * 20;
 			}
 		}
 		break;
 	case "IDIE":
-		show_message("You are dead!");
+		scr_playerDead();
 		break;
 	case "UDIE":
 		username = buffer_read(argument0, buffer_string);
@@ -129,5 +104,12 @@ switch (command) {
 			}
 		}
 		break;
+	case "REBORN":
+		scr_playerObjCreate(argument0, "REBORN");
+		break;
+	case "REVIVE":
+		scr_playerObjCreate(argument0, "REVIVE");
+		break;
+		
 		
 }

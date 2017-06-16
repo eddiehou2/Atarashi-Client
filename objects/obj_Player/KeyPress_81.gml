@@ -1,0 +1,1 @@
+global.cur_hp -= 10;
