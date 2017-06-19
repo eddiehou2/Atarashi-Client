@@ -1,0 +1,2 @@
+invType = "";
+slot = -1;

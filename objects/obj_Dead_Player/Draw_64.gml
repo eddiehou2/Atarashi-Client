@@ -1,7 +1,7 @@
 /// @description Death Menu
-draw_set_alpha(0.2);
+draw_set_alpha(0.4);
 draw_set_color(c_gray);
-draw_rectangle(0, 0, view_wport[0], view_hport[0], 0);
+draw_rectangle(0, 0, camera_get_view_width(view_camera[0]), camera_get_view_height(view_camera[0]), 0);
 
 draw_set_alpha(1);
 draw_set_color(c_purple);

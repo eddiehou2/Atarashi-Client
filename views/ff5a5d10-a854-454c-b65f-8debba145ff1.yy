@@ -6,7 +6,8 @@
     "children": [
         "175c731d-3bc8-4fd5-a05e-fd7b2032c27a",
         "7e2b2e67-8a19-44b7-bfce-119e9e7b1c60",
-        "ce1499c4-5301-4138-be69-82c625be495a"
+        "ce1499c4-5301-4138-be69-82c625be495a",
+        "4cbdc97e-cc11-4511-b8b4-2eb187af7d24"
     ],
     "filterType": "GMObject",
     "folderName": " Skills Bar",

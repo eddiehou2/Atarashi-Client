@@ -1,0 +1,1 @@
+showCharacterInfo = !showCharacterInfo;

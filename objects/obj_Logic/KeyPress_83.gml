@@ -1,0 +1,1 @@
+showSkillsBar = !showSkillsBar;

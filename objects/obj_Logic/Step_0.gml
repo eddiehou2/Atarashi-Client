@@ -31,6 +31,10 @@ if (ready) {
 	show_debug_message("REVIVE NEEDED: " + string(target_x) + "//" + string(target_y) + " // " + string(view_get_xport(view_camera[0])) + "//" + string(view_get_yport(view_camera[0])) + " // " + string(view_wport[0]) + "//" + string(view_hport[0]));
 	ready = false;
 	goto_room = -1;
+	
+	if (!instance_exists(obj_CharacterInfo)) {
+		instance_create_depth(camera_get_view_width(view_camera[0])/2, camera_get_view_height(view_camera[0])/2, -2000, obj_CharacterInfo);
+	}
 }
 
 if (goto_room == room) {
@@ -43,4 +47,4 @@ if (instance_exists(obj_Player) && global.cur_hp <= 0) {
 }
 
 global.gui_mouse_x = mouse_x - camera_get_view_x(view_camera[0]);
-global.gui_mouse_y = mouse_y - camera_get_view_y(view_camera[0]) + 30;
+global.gui_mouse_y = mouse_y - camera_get_view_y(view_camera[0]);

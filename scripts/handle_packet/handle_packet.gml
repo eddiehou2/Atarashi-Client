@@ -11,6 +11,8 @@ switch (command) {
 	case "LOGIN":
 		window_set_size(1600, 900);
 		window_set_position(100,100);
+		display_set_gui_size(960, 540);
+		surface_resize(application_surface, 960, 540);
 		scr_playerObjCreate(argument0, "LOGIN");
 		break;
 	case "REGISTER":
@@ -109,6 +111,15 @@ switch (command) {
 		break;
 	case "REVIVE":
 		scr_playerObjCreate(argument0, "REVIVE");
+		break;
+	case "INVENTORY":
+		var invCol = buffer_read(argument0, buffer_u16);
+		var invRow = buffer_read(argument0, buffer_u16);
+		var itemId = buffer_read(argument0, buffer_u16);
+		var quantity = buffer_read(argument0, buffer_u16);
+		global.characterInventory[invCol, invRow].itemId = itemId;
+		global.characterInventory[invCol, invRow].quantity = quantity;
+		show_debug_message("Loading invItem from DB");
 		break;
 		
 		

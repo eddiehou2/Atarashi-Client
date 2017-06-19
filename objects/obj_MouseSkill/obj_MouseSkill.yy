@@ -4,7 +4,16 @@
     "mvc": "1.0",
     "name": "obj_MouseSkill",
     "eventList": [
-        
+        {
+            "id": "94037278-ad4f-42b4-b24c-5e16c9812e21",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 8,
+            "m_owner": "ce1499c4-5301-4138-be69-82c625be495a"
+        }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "parentObjectId": "00000000-0000-0000-0000-000000000000",
