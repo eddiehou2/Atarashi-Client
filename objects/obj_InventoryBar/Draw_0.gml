@@ -24,30 +24,5 @@ if (showInv) {
 		}
 	}
 	
-	for (i = 0; i < 5; i++) {
-		var ix = x2 - invBarHeight/2 - (i*40);
-		var iy = y1 + invBarHeight/2;
-		var equipmentPiece;
-		
-		draw_sprite_ext(spr_border, 0, ix, iy, 1, 1, 0, c_white, 1);
-		switch (i) {
-			case 0:
-				equipmentPiece = equipment.headButton;
-				break;
-			case 1:
-				equipmentPiece = equipment.bodyButton;
-				break;
-			case 2:
-				equipmentPiece = equipment.handsButton;
-				break;
-			case 3:
-				equipmentPiece = equipment.feetButton;
-				break;
-			case 4:
-				equipmentPiece = equipment.weaponButton;
-				break;
-		}
-		equipmentPiece.x = ix;
-		equipmentPiece.y = iy;
-	}
+	
 }

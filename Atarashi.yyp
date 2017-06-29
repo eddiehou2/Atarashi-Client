@@ -31,6 +31,14 @@
     },
     "resources": [
         {
+            "Key": "001b404b-2cbf-45c5-9bfe-8e5a69161b93",
+            "Value": {
+                "id": "e98f0529-e8f6-4835-a937-0df78d04b5fe",
+                "resourcePath": "scripts\\scr_equipmentUnequip_Slot\\scr_equipmentUnequip_Slot.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "0024ad3b-f0a3-4940-a544-476c41e63911",
             "Value": {
                 "id": "32dbbe58-ad39-4e0c-958f-a03c2b93c317",
@@ -391,6 +399,14 @@
             }
         },
         {
+            "Key": "5ea6f645-3670-4cea-b93a-015f129742f0",
+            "Value": {
+                "id": "c46a7ac2-ceed-424a-8b09-d785feafa4d7",
+                "resourcePath": "scripts\\scr_equipmentEquip_Slot\\scr_equipmentEquip_Slot.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "5fa21c6e-a26b-44c0-b2af-f78a1238f1b3",
             "Value": {
                 "id": "53f16857-05fd-451f-a2c2-682190a7b6f2",
@@ -420,6 +436,14 @@
                 "id": "48cf2f10-06fd-4b72-a6fc-c64bc740871c",
                 "resourcePath": "sprites\\spr_gui_background\\spr_gui_background.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "6813774c-204a-4621-bd41-de0726d1bb1b",
+            "Value": {
+                "id": "c03cac6e-9163-4ff9-8eca-5159a5471520",
+                "resourcePath": "scripts\\scr_equipmentChange\\scr_equipmentChange.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -839,14 +863,6 @@
             }
         },
         {
-            "Key": "d93412e8-53b7-48b6-b895-fc14e64b9d5c",
-            "Value": {
-                "id": "61f85bbe-8001-4f22-98d2-90eccb9b3bcc",
-                "resourcePath": "sprites\\sprite19\\sprite19.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "d9f8062a-b89d-4638-a2ae-28e5748a65a5",
             "Value": {
                 "id": "80a821e7-cf59-4e8a-b5a5-7a16c3ec7a7b",
@@ -973,7 +989,10 @@
         "e5d3d42e-c1b3-46bb-bc19-214ae0dc4532",
         "a7526588-f503-4345-8433-a390dfb64239",
         "e32c05c4-e357-43b2-9a49-ef8168d603f0",
-        "6a8c22e3-2cdf-483a-a3ba-fe248ad362ac"
+        "6a8c22e3-2cdf-483a-a3ba-fe248ad362ac",
+        "5ea6f645-3670-4cea-b93a-015f129742f0",
+        "001b404b-2cbf-45c5-9bfe-8e5a69161b93",
+        "6813774c-204a-4621-bd41-de0726d1bb1b"
     ],
     "tutorial": ""
 }

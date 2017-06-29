@@ -121,6 +121,30 @@ switch (command) {
 		global.characterInventory[invCol, invRow].quantity = quantity;
 		show_debug_message("Loading invItem from DB");
 		break;
+	case "EQUIPMENT_RETRIEVAL":
+		var slot = buffer_read(argument0, buffer_u16);
+		var itemId = buffer_read(argument0, buffer_u16);
+		global.characterEquipment[slot].itemId = itemId;
+		show_debug_message("Loading equipmentItem from DB");
+		break;
+	case "ITEM":
+		var status = buffer_read(argument0, buffer_string);
+		if (status == "TRUE") {
+			show_debug_message("[INFO] Item update successful.");
+		}
+		else {
+			show_debug_message("[ERROR] Item update failed. Please contact an administrator.");
+		}
+		break;
+	case "EQUIPMENT_CHANGE":
+		var status = buffer_read(argument0, buffer_string);
+		if (status == "TRUE") {
+			show_debug_message("[INFO] Equipment update successful.");
+		}
+		else {
+			show_debug_message("[ERROR] Equipment update failed. Please contact an administrator.");
+		}
+		break;
 		
 		
 }

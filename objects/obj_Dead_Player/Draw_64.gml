@@ -13,6 +13,8 @@ draw_rectangle(view_wport[0]/4, view_hport[0]/4, view_wport[0]*3/4, view_hport[0
 
 draw_set_alpha(0.8);
 draw_set_color(c_dkgray);
-draw_text_ext(view_wport[0]/4 + 20, view_hport[0]/4 + 20, "You have died. Please choose your fate", 20, view_wport[0]/2 - 40);
+draw_set_halign(fa_center);
+draw_set_valign(fa_middle);
+draw_text_ext(view_wport[0]/2, view_hport[0]/2, "You have died. Please choose your fate", 20, view_wport[0]/2 - 40);
 
 

@@ -38,7 +38,11 @@ if (invType == "InventoryBar" && showInv) || (invType == "CharacterInventory" &&
 	
 	if (itemObj.itemId != -1) {
 		draw_sprite_ext(spr_items, itemObj.itemId, x, y, 1, 1, 0, c_white, 1);
-		draw_set_color(c_orange);
-		draw_text(x-3, y-3, string(itemObj.quantity));
+		if (itemObj.quantity > 1) {
+			draw_set_halign(fa_center);
+			draw_set_valign(fa_middle);
+			draw_set_color(c_orange);
+			draw_text(x+6, y+7, string(itemObj.quantity));
+		}
 	}
 }
