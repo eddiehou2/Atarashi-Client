@@ -119,6 +119,9 @@ switch (command) {
 		var quantity = buffer_read(argument0, buffer_u16);
 		global.characterInventory[invCol, invRow].itemId = itemId;
 		global.characterInventory[invCol, invRow].quantity = quantity;
+		if !(ds_map_exists(global.itemInfo, itemId)) {
+			scr_getItemInfo(itemId);
+		}
 		show_debug_message("Loading invItem from DB");
 		break;
 	case "EQUIPMENT_RETRIEVAL":
@@ -143,6 +146,22 @@ switch (command) {
 		}
 		else {
 			show_debug_message("[ERROR] Equipment update failed. Please contact an administrator.");
+		}
+		break;
+	case "ITEMINFO":
+		var status = buffer_read(argument0, buffer_string);
+		var itemId;
+		if (status == "TRUE") {
+			itemId = buffer_read(argument0, buffer_u16);
+			global.itemInfo[? itemId] = ds_map_create();
+			var numOfAttr = buffer_read(argument0, buffer_u16);
+			var attrName;
+			var attrAmount;
+			for (i=0; i < numOfAttr; i++) {
+				attrName = buffer_read(argument0, buffer_string);
+				attrAmount = buffer_read(argument0, buffer_u16);
+				global.itemInfo[? itemId][? attrName] = attrAmount;
+			}
 		}
 		break;
 		

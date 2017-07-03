@@ -1,8 +1,8 @@
 enum items {
-	sword = 2000,
+	sword = 200,
 	hp_potion = 0,
 	mp_potion = 1,
-	key = 12000
+	key = 1200
 }
 
 // 0-99 - Consumables
@@ -37,8 +37,8 @@ enum itemTypes {
 	skillBooks
 }
 
-
-
+globalvar itemInfo;
+global.itemInfo = ds_map_create();
 
 /* 
 Tools:
